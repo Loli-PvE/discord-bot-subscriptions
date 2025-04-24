@@ -1,1 +1,16 @@
+// frontend/src/components/Login.js
+import React from 'react';
 
+const Login = () => {
+  const discordAuth = () => {
+    window.location.href = `https://discord.com/api/oauth2/authorize?client_id=1326088476642246666&redirect_uri=${encodeURIComponent('http://localhost:3000/auth/discord/callback')}&response_type=code&scope=identify%20guilds`;
+  };
+
+  return (
+    <button onClick={discordAuth}>
+      Login with Discord
+    </button>
+  );
+};
+
+export default Login;
